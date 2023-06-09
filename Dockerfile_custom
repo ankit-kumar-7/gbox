@@ -1,0 +1,8 @@
+FROM golang:1.17
+
+WORKDIR /
+COPY caddy .
+# RUN chmod +x /usr/bin/caddy
+COPY Caddyfile.dist .
+
+CMD ["./caddy", "run", "-config", "./Caddyfile.dist"]
